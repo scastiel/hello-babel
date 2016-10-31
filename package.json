@@ -4,11 +4,20 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node src/server/app.js"
+    "start": "node dist/server/app.js",
+    "clean": "rm -Rf dist",
+    "build:client": "babel src/client -d dist/client",
+    "build:server": "babel src/server -d dist/server",
+    "build": "npm run build:server && npm run build:client"
   },
-  "author": "",
-  "license": "ISC",
+  "author": "Sébastien Castiel <sebastien@castiel.me>",
+  "license": "GPL-3.0",
   "dependencies": {
     "express": "^4.14.0"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.18.0",
+    "babel-preset-latest": "^6.16.0",
+    "babel-preset-stage-0": "^6.16.0"
   }
 }
